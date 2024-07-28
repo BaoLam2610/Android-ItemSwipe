@@ -1,5 +1,5 @@
 package com.lambao.itemswipe.base
 
-interface MyButtonClickListener {
+interface OnSwipeButtonClickListener {
     fun onClick(pos: Int)
 }

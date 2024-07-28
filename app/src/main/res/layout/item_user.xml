@@ -5,32 +5,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <LinearLayout
-            android:id="@+id/swipe_buttons"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:gravity="end"
-            android:orientation="horizontal"
-            android:visibility="gone">
-
-            <Button
-                android:id="@+id/btn_edit"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:background="@android:color/holo_green_light"
-                android:text="Edit"
-                android:textColor="@android:color/white" />
-
-            <Button
-                android:id="@+id/btn_delete"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:background="@android:color/holo_red_light"
-                android:text="Delete"
-                android:textColor="@android:color/white" />
-        </LinearLayout>
-
         <TextView
             android:id="@+id/tvName"
             android:layout_width="wrap_content"
@@ -44,6 +18,12 @@
             android:layout_gravity="bottom"
             android:alpha="0.1"
             android:background="@color/black" />
+
+        <CheckBox
+            android:id="@+id/cbActive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|end" />
 
     </FrameLayout>
 </layout>

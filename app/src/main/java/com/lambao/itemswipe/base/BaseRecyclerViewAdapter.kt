@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 abstract class BaseRecyclerViewAdapter<BINDING : ViewDataBinding, T> :
     RecyclerView.Adapter<BaseViewHolder<BINDING>>() {
 
-    private lateinit var context: Context
+    lateinit var context: Context
 
     var data = arrayListOf<T>()
 

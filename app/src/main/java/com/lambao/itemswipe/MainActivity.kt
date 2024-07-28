@@ -10,7 +10,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.RecyclerView
-import com.lambao.itemswipe.base.MyButtonClickListener
+import com.lambao.itemswipe.base.OnSwipeButtonClickListener
+import com.lambao.itemswipe.base.SwipeButton
 import com.lambao.itemswipe.base.SwipeHelper
 import com.lambao.itemswipe.databinding.ActivityMainBinding
 import com.lambao.itemswipe.model.users
@@ -37,20 +38,20 @@ class MainActivity : AppCompatActivity() {
         binding.rvUsers.adapter = userAdapter
 
         val swipeHelper = object : SwipeHelper(this, binding.rvUsers, 80f.dpToPx(this).toInt()) {
-            override fun instantiateMyButton(
+            override fun instantiateSwipeButtons(
                 viewHolder: RecyclerView.ViewHolder?,
-                buffer: MutableList<MyButton>?
+                buffer: MutableList<SwipeButton>
             ) {
-                buffer?.add(MyButton(
+                buffer.add(SwipeButton(
                     this@MainActivity,
                     R.drawable.deleteicon,
                     Color.parseColor("#F24C05"),
                     "Delete",
                     12f.spToPx(this@MainActivity),
                     Color.WHITE,
-                    "sans-serif",
+                    R.font.muli_italic,
                     8f.dpToPx(this@MainActivity),
-                    object : MyButtonClickListener {
+                    object : OnSwipeButtonClickListener {
                         override fun onClick(pos: Int) {
                             Toast.makeText(this@MainActivity, "Delete", Toast.LENGTH_SHORT).show()
 //                            adapter.callDeleteFunction(pos)
@@ -58,16 +59,16 @@ class MainActivity : AppCompatActivity() {
                     }
                 ))
 
-                buffer?.add(MyButton(
+                buffer.add(SwipeButton(
                     this@MainActivity,
                     R.drawable.editicon,
                     Color.parseColor("#B9D40B"),
                     "Edit",
                     12f.spToPx(this@MainActivity),
                     Color.WHITE,
-                    "sans-serif",
+                    R.font.muli_bold,
                     8f.dpToPx(this@MainActivity),
-                    object : MyButtonClickListener {
+                    object : OnSwipeButtonClickListener {
                         override fun onClick(pos: Int) {
                             Toast.makeText(this@MainActivity, "Edit", Toast.LENGTH_SHORT).show()
 //                            adapter.callEditFunction(pos)
